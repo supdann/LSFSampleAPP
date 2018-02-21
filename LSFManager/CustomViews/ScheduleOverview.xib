@@ -326,7 +326,7 @@
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAX-Mm-ego">
                     <rect key="frame" x="0.0" y="24" width="336" height="12"/>
-                    <color key="backgroundColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="12" id="JFH-si-r7H"/>
                         <constraint firstAttribute="width" constant="336" id="og7-cT-W9u"/>
@@ -334,7 +334,7 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LSI-0A-zsO">
                     <rect key="frame" x="0.0" y="12" width="336" height="12"/>
-                    <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="12" id="CEg-tZ-5xX"/>
                         <constraint firstAttribute="width" constant="336" id="D4X-Bd-HRO"/>
@@ -342,7 +342,7 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XkG-NZ-gbN">
                     <rect key="frame" x="0.0" y="0.0" width="336" height="12"/>
-                    <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="336" id="HTb-zt-08K"/>
                         <constraint firstAttribute="height" constant="12" id="z8q-F1-G9B"/>
