@@ -141,7 +141,10 @@ class LPASearchResultsViewController: UIViewController, UIEmptyStateDelegate, UI
                     weekOffset += 7
                 }
                 
+                // This is one of the code blocks that still need
+                // some refactoring.
                 switch appointment.day! {
+                    
                 case "Montag":
                     if(appointment.frequency == 0){
                         sortedAppointments[0].append(appointment)
@@ -196,13 +199,8 @@ class LPASearchResultsViewController: UIViewController, UIEmptyStateDelegate, UI
                 }
             }
         }
-        
-        
-        
         return sortedAppointments
-        
     }
-    
 }
 
 extension LPASearchResultsViewController: UITableViewDelegate, UITableViewDataSource {

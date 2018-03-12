@@ -74,54 +74,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LSFManager/ViewControllers/ViewController.swift"
-            timestampString = "542519873.975715"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "setupViews()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "LSFManager.ViewController.setupViews() -&gt; ()"
-                  moduleName = "LSFManager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/supdann/Documents/workspace_swift4/LSFManager/LSFManager/ViewControllers/ViewController.swift"
-                  timestampString = "540320547.413172"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;LSFManager.ScheduleIntervalLayer&gt;&gt;, Swift.Optional&lt;LSFManager.CustomError&gt;) -&gt; () in LSFManager.ViewController.setupViews() -&gt; ()"
-                  moduleName = "LSFManager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/supdann/Documents/workspace_swift4/LSFManager/LSFManager/ViewControllers/ViewController.swift"
-                  timestampString = "540320547.417676"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "104">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LSFManager/ViewControllers/ViewController.swift"
             timestampString = "542519873.976555"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -289,22 +241,6 @@
             endingLineNumber = "25"
             landmarkName = "appointments"
             landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LSFManager/ViewControllers/LPAListViewController.swift"
-            timestampString = "542519873.982784"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
-            landmarkName = "sortAppointments(appointments:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

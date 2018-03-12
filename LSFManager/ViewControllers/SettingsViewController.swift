@@ -98,7 +98,6 @@ class SettingsViewController: UIViewController{
         portTextField.text = String(port)
     }
     
-    
     func showErrorMessage(msg: String){
         statusLabel.textColor = UIColor.red
         statusLabel.text = msg

@@ -34,19 +34,23 @@ struct CustomError: LocalizedError {
 
 class CustomErrors {
     
-    static let networkTimeoutError = CustomError(title: "Network Timeout Error", description:"Network timeout", code: 100)
+    static let networkTimeoutError = CustomError(title: "Network Timeout Error", description:"Network timeout", code: 1001)
     
-    static let networkRequestFailure = CustomError(title: "Network Request Failure", description: "Network request failure. Verify in the settings if the server is correct.", code: 101)
+    static let networkRequestFailure = CustomError(title: "Network Request Failure", description: "Network request failure. Verify in the settings if the server is correct.", code: 1002)
     
-    static let requestCreationError = CustomError(title: "Problem creating request", description: "Problem creating request", code: 154)
+    static let requestCreationError = CustomError(title: "Problem creating request", description: "Problem creating request", code: 1003)
     
-    static let jsonUnwrappingError = CustomError(title: "JSON Error", description: "Problem unwrapping JSON", code: 9)
     
-    static let accessTokenNotProvidedError = CustomError(title: "Access Forbidden", description: "Server access not available.", code: 203)
+    static let accessTokenNotProvidedError = CustomError(title: "Access Forbidden", description: "Server access not available.", code: 1004)
     
-    static let httpError404 = CustomError(title: "HTTP Error", description: "(404) Not found", code: 203)
+    static let httpError404 = CustomError(title: "HTTP Error", description: "(404) Not found", code: 1005)
     
-    static let httpError403 = CustomError(title: "HTTP Error", description: "(403) Forbidden", code: 203)
+    static let httpError403 = CustomError(title: "HTTP Error", description: "(403) Forbidden", code: 1006)
     
-    static let tokenNotValidError = CustomError(title: "Authentication Error", description: "The access token is not valid", code: 213)
+    static let jsonUnwrappingError = CustomError(title: "JSON Error", description: "Problem unwrapping JSON", code: 1007)
+    static let tokenNotValidError = CustomError(title: "Authentication Error", description: "The access token is not valid", code: 1008)
+    
+    static let serverSettingsNotSavedError = CustomError(title: "Settings Error", description: "Server settings could not be saved", code: 1009)
+    
+   static let userSettingsNotSavedError = CustomError(title: "Settings Error", description: "Default user settings could not be saved", code: 1010)
 }

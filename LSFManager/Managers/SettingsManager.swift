@@ -60,18 +60,16 @@ class SettingsManager {
             setUserSetting(key: self.address_key, value: address)
             setUserSetting(key: self.port_key, value: port)
         }else{
-            throw CustomError(title: "Settings Error", description: "Server settings could not be saved", code: 5000)
+            throw CustomErrors.serverSettingsNotSavedError
         }
         
         if let defaultUsername = self.defaultUsername, let defaultPass = self.defaultPass  {
             setUserSetting(key: self.defaultUsernameKey, value: defaultUsername)
             setUserSetting(key: self.defaultPasswordKey, value: defaultPass)
         }else{
-            throw CustomError(title: "Settings Error", description: "Default user settings could not be saved", code: 5000)
+            throw CustomErrors.userSettingsNotSavedError
         }
-        
     }
-
     
     //////////////////////////////////////////////////////////////////////////////
     /////////////                SOME HELPER METHODS                 /////////////

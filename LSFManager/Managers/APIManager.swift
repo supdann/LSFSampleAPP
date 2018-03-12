@@ -268,6 +268,7 @@ class APIManager {
         })
     }
     
+    
     /// Method to get the appointments bound to the current user.
     ///
     /// - Parameters:
@@ -307,10 +308,10 @@ class APIManager {
         })
     }
     
+    
     //////////////////////////////////////////////////////////////////////////////
     /////////////                PROFESSOR ENDPOINTS                 /////////////
     //////////////////////////////////////////////////////////////////////////////
-    
     
     /// Fetch a List of professors by name or part of the name.
     ///
@@ -368,6 +369,7 @@ class APIManager {
         }
         
     }
+    
     
     /// Use this method to make a http request where the response should be a json file
     ///
@@ -435,6 +437,5 @@ class APIManager {
             completion(nil, CustomErrors.networkRequestFailure)
         }
     }
-    
     
 }

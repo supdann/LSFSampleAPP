@@ -45,7 +45,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         // Setup Views
-       statusLabel.text = ""
+        statusLabel.text = ""
         usernameTextField.setLeftPaddingPoints(10.0)
         usernameTextField.layer.cornerRadius = 8.0
         usernameTextField.layer.borderWidth = 1.0
@@ -103,6 +103,7 @@ class LoginViewController: UIViewController {
         })
     }
     
+    /// Helper Method to close modal
     func closeModal(){
         self.delegate?.loginModalClosed()
         self.dismiss(animated: true, completion: nil)

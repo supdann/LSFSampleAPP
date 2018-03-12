@@ -40,8 +40,6 @@ class ViewController: UIViewController {
             self.setupGreenBorderButton(button: self.authButton, buttonTitle: "Login")
             return
         }
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -167,7 +165,6 @@ extension ViewController: UISideMenuNavigationControllerDelegate {
 
     func sideMenuWillAppear(menu: UISideMenuNavigationController, animated: Bool) {
         let menuTableViewController = SideMenuManager.default.menuLeftNavigationController?.viewControllers[0] as! MenuTableViewController
-        
         
         APIManager.sharedInstance.checkAccessToken(){(type, error) in
             if let type = type {

@@ -35,6 +35,7 @@
 		743378CA1FEAB2710077DD01 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743378C81FEAB2710077DD01 /* User.swift */; };
 		743378D11FEAB4E30077DD01 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743378D01FEAB4E30077DD01 /* SettingsManager.swift */; };
 		743378D21FEAB4E30077DD01 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743378D01FEAB4E30077DD01 /* SettingsManager.swift */; };
+		746D972F2056849B00087D5F /* LPAListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74197DDF202B0FC90061767F /* LPAListViewController.swift */; };
 		747AE8FA1FD99936001E6A14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747AE8F91FD99936001E6A14 /* AppDelegate.swift */; };
 		747AE8FC1FD99936001E6A14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747AE8FB1FD99936001E6A14 /* ViewController.swift */; };
 		747AE8FF1FD99936001E6A14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 747AE8FD1FD99936001E6A14 /* Main.storyboard */; };
@@ -560,6 +561,7 @@
 			files = (
 				74EB3CB81FEABC5900129AEE /* APIManagerTests.swift in Sources */,
 				74197DE1202B3E2F0061767F /* Constants.swift in Sources */,
+				746D972F2056849B00087D5F /* LPAListViewController.swift in Sources */,
 				743378CA1FEAB2710077DD01 /* User.swift in Sources */,
 				740D35CE2033BBB10097981F /* ScheduleInterval.swift in Sources */,
 				743378D21FEAB4E30077DD01 /* SettingsManager.swift in Sources */,

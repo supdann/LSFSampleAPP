@@ -141,6 +141,12 @@ class MenuTableViewController: UITableViewController {
     }
 }
 
+
+//////////////////////////////////////////////////////////////////////////////
+/////////////              EmptyState Implementation             /////////////
+//////////////////////////////////////////////////////////////////////////////
+
+/// Show message instead of menu options if the user has not logged in!
 extension MenuTableViewController: UIEmptyStateDelegate, UIEmptyStateDataSource {
     
     var emptyStateImage: UIImage? {
