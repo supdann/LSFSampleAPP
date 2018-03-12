@@ -20,12 +20,17 @@ enum AppointmentType: Int {
 class Appointment {
     
     var pid: Int // ID of the Professor that takes care of this appointment
-    var event_id: Int // To which event does this appointment belong
+    var event_id: Int // This id the id of the event to which this appointment belongs
     var appointment_type: AppointmentType
     var appointment_info: String
     var notes: String?
     var room:String?
-
+    var start: Int?
+    var end: Int?
+    var day: String?
+    var frequency: Int?
+    var title: String?
+    
     init?(json: JSON){
         
         guard let pid = json["pid"].int,
@@ -51,8 +56,61 @@ class Appointment {
         if let notes = json["notes"].string {
             self.notes = notes
         }
+        
         if let room = json["room"].string {
             self.room = room
         }
+        
+        if let day = json["day"].string {
+            self.day = day
+        }
+        
+        if let start = json["start"].int {
+            self.start = start
+        }
+        
+        if let end = json["end"].int {
+            self.end = end
+        }
+        
+        if let frequency = json["frequency"].int {
+            self.frequency = frequency
+        }else{
+            self.frequency = 0
+        }
+        
+        if let title = json["title"].string {
+            self.title = title
+        }
+    }
+    
+    func getTimeText(time: Int?) -> String {
+        
+        guard let time = time else {
+            return "undefined"
+        }
+        
+        var timeAsString = String(describing: time)
+        
+        if(timeAsString.count == 3){
+            timeAsString = "0\(timeAsString)"
+        }
+        
+        let splitIndex = timeAsString.index(timeAsString.startIndex, offsetBy: 2)
+        
+        let hours = String(timeAsString[..<splitIndex])
+        
+        let minutes = String(timeAsString[splitIndex...])
+        
+        return "\(hours):\(minutes)"
+        
+    }
+    
+    func getEndTimeText() -> String {
+        return getTimeText(time: self.end)
+    }
+    
+    func getStartTimeText() -> String{
+        return getTimeText(time: self.start)
     }
 }

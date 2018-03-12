@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import UIEmptyState
+import SideMenu
 
 enum MenuMode {
     case Professor
@@ -17,26 +19,25 @@ enum MenuMode {
 
 class MenuTableViewController: UITableViewController {
     
-    var menuMode: MenuMode = .Student
+    var menuMode: MenuMode = .None
     
     let studentItems = [
         ("Home","HomeSegue"),
-//        ("Appointments","AppointmentsSegue"),
         ("Lecture Search","LectureSearchViewSegue"),
         ("Person Search","PersonSearchViewSegue"),
-        ("My Lectures","EventsOverviewSegue"),
+        ("My Appointments","EventsOverviewSegue"),
         ("QR Code","QRCodeSegue"),
-//        ("My Exams","ExamsOverviewSegue"),
-        ("Settings","SettingsSegue")
+        ("Settings","SettingsSegue"),
+        ("About","AboutSegue")
     ]
     
     let professorItems = [
         ("Home","HomeSegue"),
         ("Lecture Search","LectureSearchViewSegue"),
         ("Person Search","PersonSearchViewSegue"),
-        ("My Lectures","EventsOverviewSegue"),
-        ("My Exams","ExamsOverviewSegue"),
-        ("Settings","SettingsSegue")
+        ("My Appointments","EventsOverviewSegue"),
+        ("Settings","SettingsSegue"),
+        ("About","AboutSegue")
     ]
     
     override func viewDidLoad() {
@@ -44,6 +45,12 @@ class MenuTableViewController: UITableViewController {
         
         // Optionally remove seperator lines from empty cells
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+        
+        // Set the data empty source and delegate
+        self.emptyStateDataSource = self
+        self.emptyStateDelegate = self
+        
+        self.reloadEmptyState()
         
     }
     
@@ -71,14 +78,17 @@ class MenuTableViewController: UITableViewController {
         case "EventsOverviewSegue":
             let destinationVC = segue.destination as! LPASearchResultsViewController
             destinationVC.topLeftButtonType = .Menu
-        case "ExamsOverviewSegue":
-            let destinationVC = segue.destination as! LPASearchResultsViewController
-            destinationVC.topLeftButtonType = .Menu
+            destinationVC.listType = .Appointment
+            destinationVC.tableTitle = "My appointments"
+            APIManager.sharedInstance.getMyAppointments(){(appointments, error) in
+                if let appointments = appointments {
+                    destinationVC.appointments = appointments
+                    destinationVC.tableView.reloadData()
+                }
+            }
         case "QRCodeSegue":
             let destinationVC = segue.destination as! QRCodeViewController
             destinationVC.qrCodeImage = #imageLiteral(resourceName: "qrcode")
-        case "SettingsSegue":
-            let destinationVC = segue.destination as! SettingsViewController
         default:
             return
         }
@@ -93,6 +103,7 @@ class MenuTableViewController: UITableViewController {
     //////////////////////////////////////////////////////////////////////////////
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         if self.menuMode == .Professor {
             return professorItems.count
         }else if self.menuMode == .Student {
@@ -100,6 +111,7 @@ class MenuTableViewController: UITableViewController {
         }else {
             return 0
         }
+        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -128,3 +140,21 @@ class MenuTableViewController: UITableViewController {
         return 70.0
     }
 }
+
+extension MenuTableViewController: UIEmptyStateDelegate, UIEmptyStateDataSource {
+    
+    var emptyStateImage: UIImage? {
+        return nil
+    }
+    
+    var emptyStateTitle: NSAttributedString {
+        let attrs = [NSAttributedStringKey.foregroundColor: UIColor(red: 0.7, green: 0.7, blue: 0.7, alpha: 1.00),
+                     NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16)]
+        return NSAttributedString(string: "Please login first to access menu options", attributes: attrs)
+    }
+    
+}
+
+
+
+

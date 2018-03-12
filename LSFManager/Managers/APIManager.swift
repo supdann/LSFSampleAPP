@@ -71,18 +71,18 @@ class APIManager {
     ///
     /// - Parameters:
     ///   - callback: This callback method returns an error if the token is not valid.
-    func checkAccessToken(callback: @escaping (CustomError?) -> Void){
+    func checkAccessToken(callback: @escaping (Int?, CustomError?) -> Void){
         
         // Check if the address and port has been setup
-        guard let apiAddress = getAPIAddress() else { callback(CustomErrors.requestCreationError); return }
+        guard let apiAddress = getAPIAddress() else { callback(nil,CustomErrors.requestCreationError); return }
         
         // Check if the access token has already been setup
-        guard let access_token = self.access_token else { callback(CustomErrors.accessTokenNotProvidedError); return }
+        guard let access_token = self.access_token else { callback(nil,CustomErrors.accessTokenNotProvidedError); return }
         
         jsonRequest(urlStr: "\(apiAddress)accesstoken/?accesstoken=\(access_token)", httpMethod: "GET", parameters: nil, completion: { json, error in
             
             if let err = error {
-                callback(err)
+                callback(nil, err)
                 
                 return
             }
@@ -91,13 +91,13 @@ class APIManager {
             if let json = json {
                 if let valid = json["valid"].bool {
                     if(valid){
-                       callback(nil)
-                        
-                    }else{ callback(CustomErrors.tokenNotValidError) }
+                        let type = json["type"].int!
+                        callback(type,nil)
+                    }else{ callback(nil,CustomErrors.tokenNotValidError) }
                     
-                }else{ callback(CustomErrors.tokenNotValidError) }
+                }else{ callback(nil,CustomErrors.tokenNotValidError) }
                 
-            }else{ callback(CustomErrors.jsonUnwrappingError) }
+            }else{ callback(nil,CustomErrors.jsonUnwrappingError) }
         })
     }
     
@@ -187,7 +187,7 @@ class APIManager {
 
     /// Method to search for events by name
     ///
-    /// - Parameters:^
+    /// - Parameters:
     ///   - byName: The name of part of the name to use as search criteria
     ///   - callback: This callback method returns either a list of events or an error.
     func getEvents(byName: String, callback: @escaping ([Event]?, CustomError?) -> Void){
@@ -261,6 +261,45 @@ class APIManager {
                     callback(appointments, nil)
                     
                 // Return nil if JSON could not be unwrapped
+                }else{
+                    callback(nil, CustomErrors.jsonUnwrappingError)
+                }
+            }
+        })
+    }
+    
+    /// Method to get the appointments bound to the current user.
+    ///
+    /// - Parameters:
+    ///   - callback: This callback method return either a list of appointments
+    ///     or an error.
+    func getMyAppointments(callback: @escaping ([Appointment]?, CustomError?) -> Void){
+        
+        // Check if the address and port has been setup
+        guard let apiAddress = getAPIAddress() else { callback(nil,CustomErrors.requestCreationError); return }
+        
+        // Check if the access token has already been setup
+        guard let access_token = self.access_token else { callback(nil,CustomErrors.accessTokenNotProvidedError); return }
+        
+        jsonRequest(urlStr: "\(apiAddress)appointments/my-appointments?accesstoken=\(access_token)", httpMethod: "GET", parameters: nil, completion: { json, error in
+            
+            if let err = error {
+                callback(nil, err)
+            }else{
+                // Unwrap JSON
+                if let json = json {
+                    
+                    var appointments = [Appointment]()
+                    
+                    // Loop through appointment objects
+                    for (_,object) in json {
+                        if let appointment = Appointment(json: object){
+                            appointments.append(appointment)
+                        }
+                    }
+                    callback(appointments, nil)
+                    
+                    // Return nil if JSON could not be unwrapped
                 }else{
                     callback(nil, CustomErrors.jsonUnwrappingError)
                 }

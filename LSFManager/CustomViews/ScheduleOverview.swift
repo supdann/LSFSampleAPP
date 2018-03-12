@@ -10,14 +10,6 @@ import UIKit
 
 class ScheduleOverview: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
     @IBOutlet weak var firstLayer: UIView!
     @IBOutlet weak var secondLayer: UIView!
     @IBOutlet weak var thirdLayer: UIView!
@@ -53,6 +45,7 @@ class ScheduleOverview: UIView {
     
     var dViews = [UILabel]()
     
+    // This includes the information about how the whole view should be painted
     var data: ScheduleIntervalLayer? { didSet {
             setupView()
         }
@@ -91,6 +84,12 @@ class ScheduleOverview: UIView {
         applyStyleToDViews()
     }
     
+    /// Use this method to draw a schedule interval into a layer
+    ///
+    /// - Parameters:
+    ///   - interval: The Interval that needs to be drawn
+    ///   - yGap: This ist the height of the layer
+    ///   - layer: This defined the layer in which the interval should be drawn
     func drawIntervalInLayer(interval: ScheduleInterval, yGap: Double, layer: UIView){
         
         let gap = 12.0
@@ -111,6 +110,7 @@ class ScheduleOverview: UIView {
         firstLayer.addSubview(view)
     }
     
+    /// This method loops throw all of the day views and apply the border style
     func applyStyleToDViews(){
         for view in self.dViews {
             view.layer.borderColor = UIColor.gray.cgColor

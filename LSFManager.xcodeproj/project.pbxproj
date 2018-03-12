@@ -20,9 +20,9 @@
 		74197DDA202AA4A30061767F /* ScheduleOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74197DD9202AA4A30061767F /* ScheduleOverview.swift */; };
 		74197DDC202AA6770061767F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74197DDB202AA6770061767F /* Extensions.swift */; };
 		74197DDE202B027F0061767F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74197DDD202B027F0061767F /* SearchViewController.swift */; };
-		74197DE0202B0FC90061767F /* LPASearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74197DDF202B0FC90061767F /* LPASearchResultsViewController.swift */; };
+		74197DE0202B0FC90061767F /* LPAListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74197DDF202B0FC90061767F /* LPAListViewController.swift */; };
 		74197DE1202B3E2F0061767F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74197DD3202A94020061767F /* Constants.swift */; };
-		74197DE3202C68E60061767F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74197DE2202C68E60061767F /* MenuViewController.swift */; };
+		74197DE3202C68E60061767F /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74197DE2202C68E60061767F /* MenuTableViewController.swift */; };
 		74197DE5202C857D0061767F /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74197DE4202C857D0061767F /* QRCodeViewController.swift */; };
 		74197DE9202C87160061767F /* MenuItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74197DE8202C87160061767F /* MenuItemCell.xib */; };
 		74197DEB202C877F0061767F /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74197DEA202C877F0061767F /* MenuItemCell.swift */; };
@@ -42,8 +42,12 @@
 		747AE9041FD99936001E6A14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 747AE9031FD99936001E6A14 /* Assets.xcassets */; };
 		747AE9071FD99936001E6A14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 747AE9051FD99936001E6A14 /* LaunchScreen.storyboard */; };
 		747AE9121FD99936001E6A14 /* LSFManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747AE9111FD99936001E6A14 /* LSFManagerTests.swift */; };
-		74E5DB932019ADB100A5B769 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EB3CAF1FEAB71100129AEE /* NetworkHelper.swift */; };
-		74E5DB942019ADBB00A5B769 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EB3CAF1FEAB71100129AEE /* NetworkHelper.swift */; };
+		749D3B5F204D34680028F041 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749D3B5E204D34680028F041 /* Helpers.swift */; };
+		749D3B6220503AB20028F041 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749D3B6120503AB20028F041 /* Enums.swift */; };
+		749D3B6320503B0F0028F041 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749D3B6120503AB20028F041 /* Enums.swift */; };
+		749D3B65205323AE0028F041 /* TimedAppointmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 749D3B64205323AD0028F041 /* TimedAppointmentCell.xib */; };
+		749D3B67205323D20028F041 /* TimedAppointmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749D3B66205323D20028F041 /* TimedAppointmentCell.swift */; };
+		749D3B6920562F2B0028F041 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749D3B6820562F2B0028F041 /* AboutViewController.swift */; };
 		74E5DB9B2019BB7F00A5B769 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74E5DB9A2019BB7F00A5B769 /* EventCell.xib */; };
 		74E5DB9D2019BEBB00A5B769 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5DB9C2019BEBB00A5B769 /* EventCell.swift */; };
 		74E5DB9F201A0A1D00A5B769 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5DB9E201A0A1D00A5B769 /* Appointment.swift */; };
@@ -81,8 +85,8 @@
 		74197DD9202AA4A30061767F /* ScheduleOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleOverview.swift; sourceTree = "<group>"; };
 		74197DDB202AA6770061767F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		74197DDD202B027F0061767F /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		74197DDF202B0FC90061767F /* LPASearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPASearchResultsViewController.swift; sourceTree = "<group>"; };
-		74197DE2202C68E60061767F /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		74197DDF202B0FC90061767F /* LPAListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPAListViewController.swift; sourceTree = "<group>"; };
+		74197DE2202C68E60061767F /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		74197DE4202C857D0061767F /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 		74197DE8202C87160061767F /* MenuItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuItemCell.xib; sourceTree = "<group>"; };
 		74197DEA202C877F0061767F /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
@@ -103,10 +107,14 @@
 		747AE90D1FD99936001E6A14 /* LSFManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LSFManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		747AE9111FD99936001E6A14 /* LSFManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSFManagerTests.swift; sourceTree = "<group>"; };
 		747AE9131FD99936001E6A14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		749D3B5E204D34680028F041 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		749D3B6120503AB20028F041 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		749D3B64205323AD0028F041 /* TimedAppointmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimedAppointmentCell.xib; sourceTree = "<group>"; };
+		749D3B66205323D20028F041 /* TimedAppointmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedAppointmentCell.swift; sourceTree = "<group>"; };
+		749D3B6820562F2B0028F041 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		74E5DB9A2019BB7F00A5B769 /* EventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
 		74E5DB9C2019BEBB00A5B769 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		74E5DB9E201A0A1D00A5B769 /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
-		74EB3CAF1FEAB71100129AEE /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		74EB3CB21FEAB80100129AEE /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		74EB3CB71FEABC5900129AEE /* APIManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerTests.swift; sourceTree = "<group>"; };
 		74EB3CB91FEABD0400129AEE /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
@@ -179,7 +187,8 @@
 		747AE8F81FD99936001E6A14 /* LSFManager */ = {
 			isa = PBXGroup;
 			children = (
-				74EB3CB11FEAB71800129AEE /* Helpers */,
+				749D3B6020503A9F0028F041 /* Enums */,
+				74EB3CB11FEAB71800129AEE /* Extensions&Helpers */,
 				743378CF1FEAB4CA0077DD01 /* Managers */,
 				743378C71FEAB24C0077DD01 /* Models */,
 				74E5DB992019BB6100A5B769 /* CustomViews */,
@@ -205,6 +214,14 @@
 			path = LSFManagerTests;
 			sourceTree = "<group>";
 		};
+		749D3B6020503A9F0028F041 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				749D3B6120503AB20028F041 /* Enums.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		74E5DB992019BB6100A5B769 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,17 +235,19 @@
 				74197DF0202CFF930061767F /* ProfessorCell.swift */,
 				740D35C8202DF52F0097981F /* AppointmentCell.xib */,
 				740D35CA202DF53D0097981F /* AppointmentCell.swift */,
+				749D3B64205323AD0028F041 /* TimedAppointmentCell.xib */,
+				749D3B66205323D20028F041 /* TimedAppointmentCell.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
-		74EB3CB11FEAB71800129AEE /* Helpers */ = {
+		74EB3CB11FEAB71800129AEE /* Extensions&Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				74EB3CAF1FEAB71100129AEE /* NetworkHelper.swift */,
 				74197DDB202AA6770061767F /* Extensions.swift */,
+				749D3B5E204D34680028F041 /* Helpers.swift */,
 			);
-			path = Helpers;
+			path = "Extensions&Helpers";
 			sourceTree = "<group>";
 		};
 		74EB3CB51FEABA5000129AEE /* ViewControllers */ = {
@@ -237,12 +256,13 @@
 				747AE8FB1FD99936001E6A14 /* ViewController.swift */,
 				74197DD1202A868D0061767F /* LoginViewController.swift */,
 				74197DDD202B027F0061767F /* SearchViewController.swift */,
-				74197DDF202B0FC90061767F /* LPASearchResultsViewController.swift */,
-				74197DE2202C68E60061767F /* MenuViewController.swift */,
+				74197DDF202B0FC90061767F /* LPAListViewController.swift */,
+				74197DE2202C68E60061767F /* MenuTableViewController.swift */,
 				74197DE4202C857D0061767F /* QRCodeViewController.swift */,
 				74197DEC202CEF340061767F /* SettingsViewController.swift */,
 				740D35C4202DD3A30097981F /* EventDetailsViewController.swift */,
 				740D35C6202DE6830097981F /* ProfessorDetailsViewController.swift */,
+				749D3B6820562F2B0028F041 /* AboutViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -369,6 +389,7 @@
 				74197DEF202CFF810061767F /* ProfessorCell.xib in Resources */,
 				740D35C9202DF52F0097981F /* AppointmentCell.xib in Resources */,
 				747AE9071FD99936001E6A14 /* LaunchScreen.storyboard in Resources */,
+				749D3B65205323AE0028F041 /* TimedAppointmentCell.xib in Resources */,
 				747AE9041FD99936001E6A14 /* Assets.xcassets in Resources */,
 				747AE8FF1FD99936001E6A14 /* Main.storyboard in Resources */,
 				74197DD6202A9BAD0061767F /* ScheduleOverview.xib in Resources */,
@@ -408,24 +429,20 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LSFManager/Pods-LSFManager-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/ESPullToRefresh/ESPullToRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/UIEmptyState/UIEmptyState.framework",
-				"${BUILT_PRODUCTS_DIR}/UIScrollView-InfiniteScroll/UIScrollView_InfiniteScroll.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESPullToRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIEmptyState.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIScrollView_InfiniteScroll.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -506,22 +523,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				74197DD2202A868D0061767F /* LoginViewController.swift in Sources */,
-				74197DE0202B0FC90061767F /* LPASearchResultsViewController.swift in Sources */,
+				74197DE0202B0FC90061767F /* LPAListViewController.swift in Sources */,
 				74197DD4202A94020061767F /* Constants.swift in Sources */,
 				740D35CB202DF53D0097981F /* AppointmentCell.swift in Sources */,
 				74197DE5202C857D0061767F /* QRCodeViewController.swift in Sources */,
 				740D35CD2033655B0097981F /* ScheduleInterval.swift in Sources */,
-				74E5DB932019ADB100A5B769 /* NetworkHelper.swift in Sources */,
 				74197DF1202CFF930061767F /* ProfessorCell.swift in Sources */,
 				743378C51FEAB1BD0077DD01 /* APIManager.swift in Sources */,
-				74197DE3202C68E60061767F /* MenuViewController.swift in Sources */,
+				74197DE3202C68E60061767F /* MenuTableViewController.swift in Sources */,
 				747AE9021FD99936001E6A14 /* LSFManager.xcdatamodeld in Sources */,
 				74EB3CB31FEAB80100129AEE /* Event.swift in Sources */,
 				74E5DB9D2019BEBB00A5B769 /* EventCell.swift in Sources */,
 				740D35C5202DD3A30097981F /* EventDetailsViewController.swift in Sources */,
 				743378D11FEAB4E30077DD01 /* SettingsManager.swift in Sources */,
 				74197DDC202AA6770061767F /* Extensions.swift in Sources */,
+				749D3B67205323D20028F041 /* TimedAppointmentCell.swift in Sources */,
 				74197DDA202AA4A30061767F /* ScheduleOverview.swift in Sources */,
+				749D3B6220503AB20028F041 /* Enums.swift in Sources */,
 				747AE8FC1FD99936001E6A14 /* ViewController.swift in Sources */,
 				740D35C7202DE6830097981F /* ProfessorDetailsViewController.swift in Sources */,
 				74E5DB9F201A0A1D00A5B769 /* Appointment.swift in Sources */,
@@ -529,6 +547,8 @@
 				747AE8FA1FD99936001E6A14 /* AppDelegate.swift in Sources */,
 				74197DEB202C877F0061767F /* MenuItemCell.swift in Sources */,
 				74197DED202CEF340061767F /* SettingsViewController.swift in Sources */,
+				749D3B5F204D34680028F041 /* Helpers.swift in Sources */,
+				749D3B6920562F2B0028F041 /* AboutViewController.swift in Sources */,
 				743378C91FEAB2710077DD01 /* User.swift in Sources */,
 				74197DDE202B027F0061767F /* SearchViewController.swift in Sources */,
 			);
@@ -541,7 +561,6 @@
 				74EB3CB81FEABC5900129AEE /* APIManagerTests.swift in Sources */,
 				74197DE1202B3E2F0061767F /* Constants.swift in Sources */,
 				743378CA1FEAB2710077DD01 /* User.swift in Sources */,
-				74E5DB942019ADBB00A5B769 /* NetworkHelper.swift in Sources */,
 				740D35CE2033BBB10097981F /* ScheduleInterval.swift in Sources */,
 				743378D21FEAB4E30077DD01 /* SettingsManager.swift in Sources */,
 				743378C61FEAB1BD0077DD01 /* APIManager.swift in Sources */,
@@ -549,6 +568,7 @@
 				74EB3CB41FEAB80300129AEE /* Event.swift in Sources */,
 				747AE9121FD99936001E6A14 /* LSFManagerTests.swift in Sources */,
 				74E5DBA0201A117700A5B769 /* Appointment.swift in Sources */,
+				749D3B6320503B0F0028F041 /* Enums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,6 +19,11 @@ class SettingsViewController: UIViewController{
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var statusLabel: UILabel!
     
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var menuButton: UIButton!
+    
+    var topLeftButtonType: TopLeftButtonType = .Menu
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,12 +33,17 @@ class SettingsViewController: UIViewController{
         applyHTWGreenButtonStyle(button: saveButton)
         clearStatusLabel()
         
+        // Check if either the back button or the menu button should be displayed
+        if(self.topLeftButtonType == .Menu){
+            menuButton.isHidden = false
+            backButton.isHidden = true
+        }else if(self.topLeftButtonType == .Back){
+            menuButton.isHidden = true
+            backButton.isHidden = false
+        }
+        
         // Load User Settings
         loadFromUserDefaults()
-    }
-    
-    @IBAction func menuButtonPressed(_ sender: UIButton) {
-        present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
@@ -61,7 +71,19 @@ class SettingsViewController: UIViewController{
     }
     
     //////////////////////////////////////////////////////////////////////////////
-    /////////////                  Setting Methods                   /////////////
+    /////////////                  TOP LEFT BUTTON                   /////////////
+    //////////////////////////////////////////////////////////////////////////////
+    
+    @IBAction func menuButtonPressed(_ sender: UIButton) {
+        present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
+    }
+    
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    //////////////////////////////////////////////////////////////////////////////
+    /////////////                   HELPER METHODS                   /////////////
     //////////////////////////////////////////////////////////////////////////////
     
     func loadFromUserDefaults(){
@@ -76,9 +98,6 @@ class SettingsViewController: UIViewController{
         portTextField.text = String(port)
     }
     
-    //////////////////////////////////////////////////////////////////////////////
-    /////////////                   HELPER METHODS                   /////////////
-    //////////////////////////////////////////////////////////////////////////////
     
     func showErrorMessage(msg: String){
         statusLabel.textColor = UIColor.red

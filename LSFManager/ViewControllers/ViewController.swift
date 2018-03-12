@@ -33,16 +33,46 @@ class ViewController: UIViewController {
         APIManager.sharedInstance.public_address = SettingsManager.sharedInstance.address
         APIManager.sharedInstance.port = SettingsManager.sharedInstance.port
         
-        setupViews()
+        // If there is an active access token then delete it
+        if authSuccess {
+            APIManager.sharedInstance.access_token = nil
+            authSuccess = false
+            self.setupGreenBorderButton(button: self.authButton, buttonTitle: "Login")
+            return
+        }
+        
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        setupViews()
+    }
+    
     @IBAction func authButtonPressed(_ sender: UIButton) {
+        
+        // If the API Manager currently has a current token, then remove it
+        if let _ = APIManager.sharedInstance.access_token {
+            
+            APIManager.sharedInstance.access_token = nil
+            
+            // Set No current successful auth
+            self.authSuccess = false
+            
+            // Set the auth button to login
+            self.setupGreenBorderButton(button: self.authButton, buttonTitle: "Login")
+            
+            return
+        }
+        
         self.performSegue(withIdentifier: "LoginSegue", sender: self)
     }
     
     @IBAction func menuButtonPresed(_ sender: UIButton) {
         present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
+    }
+    
+    @IBAction func settingsButtonPressed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "SettingsFromMainSegue", sender: self)
     }
     
     override func didReceiveMemoryWarning() {
@@ -81,40 +111,13 @@ class ViewController: UIViewController {
             
         }
         
-        // If there is an active access token then delete it
-        if authSuccess {
-            APIManager.sharedInstance.access_token = nil
-            authSuccess = false
-            self.authButton.layer.borderColor = Constants.htwGreen.cgColor
-            self.authButton.setTitleColor(Constants.htwGreen, for: .normal)
-            self.authButton.setTitle("Login", for: .normal)
-            return
-        }
-        
-        APIManager.sharedInstance.checkAccessToken(){(error) in
-            if let error = error {
-                if (error.code == CustomErrors.tokenNotValidError.code){
-                    let alertController = UIAlertController(title: "Session expired", message:
-                        "Your session has expired. Please login again.", preferredStyle: UIAlertControllerStyle.alert)
-                    alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-                    
-                    self.present(alertController, animated: true, completion: nil)
-                    APIManager.sharedInstance.access_token = nil
-                }
-                self.authButton.layer.cornerRadius = 8.0
-                self.authButton.layer.borderWidth = 1.0
-                self.authButton.layer.borderColor = Constants.htwGreen.cgColor
-                self.authButton.setTitleColor(Constants.htwGreen, for: .normal)
-                self.authButton.setTitle("Login", for: .normal)
-                
+        APIManager.sharedInstance.checkAccessToken(){(type, error) in
+            if let _ = error {
+                self.setupGreenBorderButton(button: self.authButton, buttonTitle: "Login")
                 return
             }
-
-            self.authButton.layer.borderColor = UIColor.red.cgColor
-            self.authButton.setTitleColor(UIColor.red, for: .normal)
-            self.authButton.setTitle("Logout", for: .normal)
             self.authSuccess = true
-
+            self.setupRedBorderButton(button: self.authButton, buttonTitle: "Logout")
         }
     }
     
@@ -128,10 +131,30 @@ class ViewController: UIViewController {
         case "LoginSegue":
             let loginViewController = segue.destination as! LoginViewController
             loginViewController.delegate = self
+        case "SettingsFromMainSegue":
+            let settingsViewController = segue.destination as! SettingsViewController
+            settingsViewController.topLeftButtonType = .Back
         default:
             return
         }
     }
+    
+    func setupGreenBorderButton(button: UIButton, buttonTitle: String){
+        button.layer.cornerRadius = 8.0
+        button.layer.borderWidth = 1.0
+        button.layer.borderColor = Constants.htwGreen.cgColor
+        button.setTitleColor(Constants.htwGreen, for: .normal)
+        button.setTitle(buttonTitle, for: .normal)
+    }
+    
+    func setupRedBorderButton(button: UIButton, buttonTitle: String){
+        button.layer.cornerRadius = 8.0
+        button.layer.borderWidth = 1.0
+        button.layer.borderColor = UIColor.red.cgColor
+        button.setTitleColor(UIColor.red, for: .normal)
+        button.setTitle(buttonTitle, for: .normal)
+    }
+    
 }
 
 extension ViewController: ModalClosedDelegate {
@@ -139,4 +162,35 @@ extension ViewController: ModalClosedDelegate {
         setupViews()
     }
 }
+
+extension ViewController: UISideMenuNavigationControllerDelegate {
+
+    func sideMenuWillAppear(menu: UISideMenuNavigationController, animated: Bool) {
+        let menuTableViewController = SideMenuManager.default.menuLeftNavigationController?.viewControllers[0] as! MenuTableViewController
+        
+        
+        APIManager.sharedInstance.checkAccessToken(){(type, error) in
+            if let type = type {
+                if type == 0 {
+                    menuTableViewController.menuMode = .Student
+                }else if type == 1 {
+                    menuTableViewController.menuMode = .Professor
+                }
+            }else{
+                menuTableViewController.menuMode = .None
+            }
+            menuTableViewController.tableView.reloadData()
+            menuTableViewController.reloadEmptyState()
+        }
+    }
+
+    func sideMenuWillDisappear(menu: UISideMenuNavigationController, animated: Bool) { }
+
+    func sideMenuDidDisappear(menu: UISideMenuNavigationController, animated: Bool) { }
+
+    func sideMenuDidAppear(menu: UISideMenuNavigationController, animated: Bool) { }
+}
+
+
+
 

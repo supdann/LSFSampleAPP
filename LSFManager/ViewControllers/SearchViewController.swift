@@ -11,12 +11,6 @@ import UIKit
 import NVActivityIndicatorView
 import SideMenu
 
-enum SearchType {
-    case Professor
-    case Event
-    case None
-}
-
 class SearchViewController: UIViewController {
     
     @IBOutlet weak var searchTitleLabel: UILabel!

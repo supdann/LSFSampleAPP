@@ -38,7 +38,6 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var statusLabel: UILabel!
     
-    
     var delegate: ModalClosedDelegate?
     
     override func viewDidLoad() {

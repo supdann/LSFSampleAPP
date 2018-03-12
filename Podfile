@@ -8,9 +8,7 @@ target 'LSFManager' do
   # Pods for LSFManager
   pod 'Alamofire', '~> 4.5'
   pod 'SwiftyJSON'
-  pod "ESPullToRefresh"
   pod 'UIEmptyState'
-  pod 'UIScrollView-InfiniteScroll', '~> 1.0.0'
   pod 'SideMenu'
   pod 'IQKeyboardManagerSwift'
   pod 'NVActivityIndicatorView'

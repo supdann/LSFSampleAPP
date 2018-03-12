@@ -36,7 +36,7 @@ class CustomErrors {
     
     static let networkTimeoutError = CustomError(title: "Network Timeout Error", description:"Network timeout", code: 100)
     
-    static let networkRequestFailure = CustomError(title: "Network Request Failure", description: "Network request failure", code: 101)
+    static let networkRequestFailure = CustomError(title: "Network Request Failure", description: "Network request failure. Verify in the settings if the server is correct.", code: 101)
     
     static let requestCreationError = CustomError(title: "Problem creating request", description: "Problem creating request", code: 154)
     
